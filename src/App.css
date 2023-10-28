@@ -1,0 +1,18 @@
+.carousel-first {
+    margin-left: 5vw;
+    margin-top: 8vh;
+    position: relative;
+}
+
+
+@media (max-width:600px) {
+    .carousel-first {
+        margin-top: 5vh;
+    }
+}
+
+@media (min-width:600px) and (max-width:900px) {
+    .carousel-first {
+        margin-top: 7vh;
+    }
+}

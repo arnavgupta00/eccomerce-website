@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Oswald:wght@700&family=Poppins:wght@700&family=Roboto&family=Satisfy&family=Tektur:wght@400;800&display=swap');
+
+
+:root {
+    --main-color: rgb(238, 236, 236);
+    --second-color: rgb(54, 54, 54);
+    --button-bottom: rgb(54, 54, 54);
+    --search: rgb(207, 207, 207);
+    --border: rgb(54, 54, 54);
+    --break: rgb(179, 184, 185);
+    --shadow-search: rgba(55, 162, 233, 0.3);
+    --shadow-submit: #369ee3;
+    --background-color-components: rgb(220, 219, 219);
+}
+
+
+* {
+    margin: 0px;
+}
+
+.checkoutPageMain {
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+    height: 80vh;
+    margin: 30px;
+    gap: 2vw;
+
+}
+
+.checkoutProductsList {
+    width: 20vw;
+    background-color: var(--background-color-components);
+    border-radius: 15px;
+    overflow-y: scroll;
+
+}
+
+.checkoutProductsListSingleItem{
+
+    width: 90%;
+    height: 180px;
+    margin: 5%;
+    border-radius: 15px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+.checkoutProductsListSingleItem img{
+    width: 100%;
+    height: 80%;
+    border-radius: 15px;
+
+    object-fit: cover;
+}
+.checkoutForm {
+    width: 70vw;
+    background-color: var(--background-color-components);
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+
+}
+
+.checkoutForm h1{
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.6;
+    margin-bottom: 35px;
+}
+.checkoutFormInputLabel {
+    display: flex;
+    flex-direction: column
+}
+
+
+.checkoutInfoInput {
+    height: 30px;
+    width: 250px;
+    margin: 2vh;
+    margin-right: 0vh;
+    color: var(--second-color);
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 2px var(--shadow-search);
+    background-color: var(--search);
+}
+
+.checkoutPagerowflex1, .checkoutPagerowflex2 , .checkoutPagerowflex3 {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+label{
+    margin-left: 15px;
+}
+#checkoutPageAddressHouse{
+    width: 700px;
+}
+#checkoutPageAddressArea{
+    width: 700px;
+}
+
+.checkoutPagerowflex3{
+    justify-content: space-around;
+}
+#checkoutPageCountry, #checkoutPageState{
+    width: 400px;
+}

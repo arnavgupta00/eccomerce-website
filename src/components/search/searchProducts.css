@@ -1,0 +1,202 @@
+.searchMain{
+    display: flex;
+    flex-direction: row;
+    margin: 1vw;
+    border-radius: 15px;
+}
+
+.searchSort{
+    background-color: rgb(220, 219, 219);
+    height: 72vh;
+    width: 20vw;
+    margin: 2vw;
+    border-radius: 15px;
+
+}
+
+.searchProducts{
+    background-color: rgb(220, 219, 219);
+    height: 72vh;
+    width: 70vw;
+    margin: 2vw;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    padding-left: 1vw;
+}
+.sortPrice{
+    margin: 1vw;
+    margin-top: 50px;
+}
+.sortPrice form{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 1vw;
+    
+}
+.sortPrice form input{
+    width: 3vw;
+    padding-left: 1vw;
+    margin-left: 0.5vw;
+    border: 0;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.sortSubmitPrice{
+    width: 3vw;
+    padding-left: 0.5vw;
+    margin-left: 0.5vw;
+    border: 0;
+    height: 25px;
+    border-radius: 5px;
+
+}
+
+.sortRating{
+    margin: 1vw;
+}
+
+.sortRating div{
+    margin-top:10px ;
+    margin-left: 1.5vw;
+}
+.sortRating div input{
+    margin: 0.1vw;
+    border-radius: 50%;
+    
+}
+.sortRating div button{
+    width: 3vw;
+    padding-left: 0.5vw;
+    margin-left: 0.5vw;
+    border: 0;
+    height: 25px;
+    border-radius: 5px;
+
+}   
+
+.sortCategory{
+    margin-left: 1vw;
+}
+.sortCategory div{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3px;
+    margin-top: 15px;
+    overflow-y: scroll;
+    max-height: 150px;
+}
+.sortCategory div button{
+    height: 40px;
+    width: max-content;
+    padding: 10px;
+    background-color: rgb(238, 236, 236);
+    border-radius:15px ;
+    text-align: center;
+    margin: 2px;
+    border-color: transparent;
+    margin-top: 5px;
+}
+
+.sortCategory div button:active{
+    border-color: black;
+
+}
+
+.productSortMain{
+    height: 40px;
+    width: 90px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius:15px ;
+    text-align: center;
+    margin: 2px;
+    border-color: transparent;
+    
+    font-size: 15px;
+    margin-left: 7vw;
+    margin-top: 2vh;
+}
+.productSortMain:active{
+    background-color: rgb(238, 236, 236);
+    color: black;
+}
+
+@media (max-width:900px) and (min-width:600px) {
+    .searchSort{
+        margin-top: 30px;
+    }
+    
+    .searchProducts{
+        margin-top: 30px;
+        padding-left: 50px;
+    }
+    .sortRating div button{
+        width: 50px;
+        
+    
+    }  
+    .sortSubmitPrice{
+        width: 50px;
+        padding-left: 0.5vw;
+        margin-left: 0.5vw;
+        border: 0;
+        height: 25px;
+        border-radius: 5px;
+    
+    }
+    .sortPrice form input{
+        width: 30px;
+        padding-left: 1vw;
+        margin-left: 0.5vw;
+        border: 0;
+        height: 25px;
+        border-radius: 5px;
+    }
+    .productSortMain{
+        margin-left: 30px;
+    }
+}
+
+@media (max-width:600px)  {
+    .searchSort{      
+        margin-top: 30px;
+        width: 40vw;
+    }
+    
+    .searchProducts{   
+        margin-top: 30px;
+        padding-left: 20px;
+        width: 50vw;
+
+    }
+    .sortRating div button{
+        width: 50px;
+        
+    
+    }  
+    .sortSubmitPrice{
+        width: 50px;
+        padding-left: 0.5vw;
+        margin-left: 0.5vw;
+        border: 0;
+        height: 25px;
+        border-radius: 5px;
+    
+    }
+    .sortPrice form input{
+        width: 30px;
+        padding-left: 1vw;
+        margin-left: 0.5vw;
+        border: 0;
+        height: 25px;
+        border-radius: 5px;
+    }
+    .productSortMain{
+        margin-left: 30px;
+    }
+}

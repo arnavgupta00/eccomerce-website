@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Oswald:wght@700&family=Poppins:wght@700&family=Roboto&family=Satisfy&family=Tektur:wght@400;800&display=swap');
+
+*{
+    margin: 0%;
+}
+.productCardMain{
+    background-color: rgb(237, 235, 235);
+    height: 330px;
+    width: 210px;
+    margin: 2%;
+    border-radius: 10px;
+    
+}
+
+.productCardImg{
+    height: 230px;
+    width: 210px;
+    border-radius: 10px;
+    object-fit: cover;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.productCardText{
+    margin-left: 20px;
+}
+.productCardTitle{
+    font-family: 'Oswald', sans-serif;
+}
+.productCardCategory{
+    font-family: 'Montserrat', sans-serif;
+}
+.productCardPrice{
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+}
+.productCardPrice{
+    
+    font-family: 'Bebas Neue';
+    
+}
+.productCardIncreased{
+    margin-right: 1px;
+    font-size: 13px;
+    color: rgb(218, 36, 36);
+}
+.breakLine{
+    margin: 0%;
+    width: 100%; 
+    border: none; 
+    background-color: red; 
+    height: 1px;
+    margin-left: 1vw; 
+    display: none;
+    
+}
+
+@media (max-width:900px) and (min-width:600px) {
+    .productCardMain{
+        height: 270px;
+        width: 180px;
+        margin-left: 3.5vw;
+        
+    }
+    
+    .productCardImg{
+        height: 180px;
+        width: 180px;
+    }
+    
+    
+}
+
+@media (max-width:600px)  {
+    .productCardMain{
+        height: 250px;
+        width: 150px;
+        margin: 3%;
+        border-radius: 10px;
+        
+    }
+    
+    .productCardImg{
+        height: 160px;
+        width: 150px;
+        border-radius: 10px;
+  
+    }
+    
+    .productCardTitle{
+        font-size: 20px;
+    }
+    .productCardCategory{
+        font-size: 12px;
+    }
+    .productCardPrice{
+       
+        font-size: 15px;
+    }
+    .productCardPrice{
+        
+        font-family: 'Bebas Neue';
+        
+    }
+    
+}

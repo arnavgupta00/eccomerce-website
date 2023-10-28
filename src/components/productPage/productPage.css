@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Oswald:wght@700&family=Poppins:wght@700&family=Roboto&family=Satisfy&family=Tektur:wght@400;800&display=swap');
+
+*{
+    margin: 0%;
+}
+.productMain{
+    background-color: rgb(238, 236, 236);
+    width: 96vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 2.5vw;
+}
+.topPart{
+    display: flex;
+    flex-direction: row;
+}
+.productCarousel{
+    width: 50vw;
+    height: 90vh;
+    background-color: rgb(222, 220, 220);
+    margin: 2.5vw;
+}
+.productSingleTopTitleMain{
+    width: 40vw;
+    height: 90vh;
+    margin: 2.5vw;
+    background-color: rgb(222, 220, 220);
+    display: flex;
+    flex-direction: column;
+
+}
+.productSingleTopTitle{
+    margin-left: 3vw;
+}
+.productSingleHeading{
+    margin-top:50px;
+    width: 32vw;
+    height: max-content;
+    background-color: transparent;
+    margin-bottom: 50px;
+    font-family: 'Oswald', sans-serif;
+
+}
+.productSingleCategory{
+    height: 25px;
+    width: max-content;
+    padding: 10px;
+    background-color: rgb(238, 236, 236);
+    border-radius:15px ;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+
+}
+.productSinglePriceTag{
+    display: flex;
+    height: 50px;
+    width: 30vw;
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+    margin-top: 50px;
+}
+.productSinglePriceTag p{
+    vertical-align: super;
+    font-size: 35px;
+}
+
+.productSingleIncreasedPriceTag{
+    display: flex;
+    height: 50px;
+    width: max-content;
+    font-family: 'Bebas Neue';
+    font-size: 12px;
+    margin-top: 50px;
+    color: red;
+    margin-right: 3px;
+}
+.productSingleIncreasedPriceTag p{
+    vertical-align: super;
+    font-size: 10px;
+}
+.propductSingleBuyCart{
+    margin-top:50px ;
+    width: 32vw;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.productSingleBuy button{
+    margin: 0%;
+    width:  21vw;
+    height: 90px;
+    border: 4px solid rgba(0, 0, 0, 0.76);
+    background-color:white ;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+
+
+}
+.productSingleBuy button:active{
+    border: 4px solid white;
+    background-color:black ;
+    color: white;
+
+}
+.productSingleCart button{
+    width: 9vw;
+    height: 90px;
+    border: 4px solid white;
+    background-color:black ;
+    color: white;
+    margin-left: 0.7vw;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    margin-right: 1vw;
+
+}
+
+.productSingleCart button:active{
+    border: 4px solid rgba(0, 0, 0, 0.76);
+    background-color:white ;
+    color: black;
+}
+.productSingleBottonCover{
+    display: flex;
+    flex-direction: row;
+    width: 31vw;
+    justify-content: space-between;
+    margin-top: 50px;
+    background-color: rgb(238, 236, 236);
+    border-radius:15px ;
+
+}
+.productSingleDelivery{
+    height: 40px;
+    padding: 10px;
+  
+    font-family: 'bebas neue';
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.productSingleStock{
+    height: 40px;
+    padding: 10px;
+    font-family: 'bebas neue';
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    
+}
+.productSingleStockOut{
+    color: red;
+}
+
+.productSingleDescription{
+    height: 90vh;
+    width: 91.7vw;
+    margin: 2.5vw;
+    
+}
+
+.productSingleDescriptionHeading{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 25px;
+}
+
+.productSingleDescriptionDetail{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.productSingleDescriptionDetailGrid{
+    margin-left: 3vw;
+    margin-top: 30px;
+}
+.productSingleDescriptionDetailGridOneCat{
+    display: flex;
+    flex-direction: row;
+   
+}
+.productSingleDescriptionDetailGridOneCatLeft{
+    height: 50px;
+    width: 25vw;
+    border: 2px solid black;
+    text-align: left;
+    
+    font-family: 'Oswald', sans-serif;
+
+}
+.productSingleDescriptionDetailGridOneCatLeft h2{
+    margin-left: 2vw;
+    padding-top: 10px;
+}
+.productSingleDescriptionDetailGridOneCatRight{
+    height: 50px;
+    width: 15vw;
+    border: 2px solid black;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    
+
+}
+.productSingleDescriptionDetailGridOneCatRight h2{
+    margin-left: 2vw;
+    padding-top: 10px;
+}
+.productSingleDescriptionDetailWords{
+    margin-left: 3vw;
+    margin-top: 30px;
+    margin-right: 2vw;
+    font-family: Verdana;
+}

@@ -1,0 +1,57 @@
+:root{
+    --main-color:  rgb(238, 236, 236);
+    --second-color: rgb(54, 54, 54);
+    --button-bottom: rgb(54, 54, 54);
+    --search: rgb(207, 207, 207);
+    --border: rgb(54, 54, 54);
+    --break: rgb(179, 184, 185);
+    --shadow-search: rgba(55, 162, 233, 0.3);
+    --shadow-submit:#369ee3;
+}
+* {
+    margin: 0;
+}
+
+.signMain {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUpMain {
+    display: flex;
+    flex-direction: column
+}
+.signinput {
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border: 2px solid transparent;
+    font-family: 'Oswald', sans-serif;
+}
+
+.signinput:hover {
+    border: 2px solid var(--main-color); 
+}
+.signText{
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: "Montserrat";
+}
+.signSubmit{
+    margin-top: 15px;
+    height: 35px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    font-family: "Montserrat";
+
+
+}
+.signSubmit:active{
+    border: 2px solid var(--second-color);
+    font-family: "Montserrat";
+}
