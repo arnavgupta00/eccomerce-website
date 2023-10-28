@@ -12,6 +12,9 @@ export default function SearchProducts(props) {
 
     const queryCalled = useParams().query;
     var [listProducts ,setlistProducts]= useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -26,6 +29,7 @@ export default function SearchProducts(props) {
                     const result = await response.json();
                     
                     setlistProducts(result);
+                    setIsLoading(false);
                 } else {
                     console.error("Failed to make request:", response.statusText);
                 }
@@ -105,6 +109,7 @@ export default function SearchProducts(props) {
             <button className='productSortMain'>Sort</button>
 
         </div>
+        {isLoading ? <div className='searchProducts skeleton' style={{ }}></div> : 
         <div className='searchProducts'>
 
             {listProducts.map((x, index) => {
@@ -115,6 +120,6 @@ export default function SearchProducts(props) {
                 }
             })}
 
-        </div>
+        </div>}
     </div>
 }

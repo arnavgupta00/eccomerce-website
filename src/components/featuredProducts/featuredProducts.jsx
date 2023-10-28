@@ -5,11 +5,14 @@ import url from '../url';
 
 
 
+
 export default function FeaturedProducts(props) {
     const [productData, setProductData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchDataFeature = async () => {
+            setIsLoading(true);
             try {
                 const response = await fetch(url + "/productsFeatured", {
                     method: 'GET',
@@ -21,6 +24,7 @@ export default function FeaturedProducts(props) {
                 if (!response.message) {
                     const result = await response.json();
                     setProductData(result);
+                    setIsLoading(false);
                 } else {
                     console.error("Failed to make request:", response.statusText);
                 }
@@ -29,14 +33,20 @@ export default function FeaturedProducts(props) {
             }
         };
 
-        fetchDataFeature(); // Call the fetchData function when the component mounts
+        fetchDataFeature();
     }, []);
 
     return (
+
+
+
+
+
         <div className="featuredProductsMain">
             <h1 style={{ marginLeft: "2vw" }}>Featured Products</h1>
             <div className="featuredProducts">
-                {productData.map((product, index) => {
+
+                {isLoading ? <div className='featuredProductsMain skeleton' style={{ backgroundColor: "rgb(207, 207, 207)", height: "50vh", margin: "0px", marginTop: "10px", left: "-0.2vw" }}></div> : productData.map((product, index) => {
                     if (product.productCategory !== "nONE") {
                         return (
                             <ProductCard
@@ -56,5 +66,6 @@ export default function FeaturedProducts(props) {
                 })}
             </div>
         </div>
+
     );
 }

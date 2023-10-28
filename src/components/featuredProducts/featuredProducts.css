@@ -2,23 +2,25 @@
 
 
 .featuredProductsMain {
-    
-    
+
+
     position: relative;
     border-radius: 10px;
     width: 90vw;
     height: max-content;
-    background-color :rgb(246, 245, 245);
+    background-color: rgb(246, 245, 245);
     left: 2vw;
     padding-top: 1vw;
     margin-left: 3vw;
 }
-.featuredProducts{
+
+.featuredProducts {
     display: flex;
     flex-wrap: wrap;
 }
 
-.featuredProductsMain h1{
+.featuredProductsMain h1 {
     font-family: 'Poppins', sans-serif;
     opacity: 0.6;
 }
+

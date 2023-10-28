@@ -8,6 +8,7 @@ import "./productPage.css";
 export default  function ProductPage(props) {
 
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(true);
 
     const [dataSingleProduct, setdataSingleProduct] =useState({
         productTitle: "NO PRODUCT ",
@@ -70,6 +71,7 @@ export default  function ProductPage(props) {
                     const result = await response.json();
                     
                     setdataSingleProduct(result);
+                    setIsLoading(false)
                 } else {
                     setdataSingleProduct({
                         productTitle: "NO PRODUCT ",
@@ -106,10 +108,14 @@ export default  function ProductPage(props) {
     
     return <div className='productMain'>
         <div className='topPart'>
+
+            {isLoading ? <div  className='productCarousel skeleton'></div>:
             <div className='productCarousel'>
 
                 <Carousel list={imgListTemp} height="60vh" width="50vw" marginTop="25vh" borderRadii="0px" autoPlay="true" />
-            </div>
+            </div>}
+
+            {isLoading ? <div className='productSingleTopTitleMain skeleton'></div> : 
             <div className='productSingleTopTitleMain'>
                 <div className='productSingleTopTitle'>
                     <div className='productSingleHeading'><h1>{dataSingleProduct.productTitle}</h1></div>
@@ -142,8 +148,10 @@ export default  function ProductPage(props) {
 
                 </div>
 
-            </div>
+            </div>}
         </div>
+
+        {isLoading ? <div className='productSingleDescription skeleton'></div> : 
         <div className='productSingleDescription'>
             <div className='productSingleDescriptionHeading'>
                 <h1>Product Details</h1>
@@ -163,6 +171,6 @@ export default  function ProductPage(props) {
                 </div>
 
             </div>
-        </div>
+        </div>}
     </div>
 }
