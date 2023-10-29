@@ -61,14 +61,14 @@
 @media (max-width:900px) and (min-width:600px) {
     .productCardMain{
         height: 270px;
-        width: 180px;
+        width: 24vw;
         margin-left: 3.5vw;
         
     }
     
     .productCardImg{
         height: 180px;
-        width: 180px;
+        width: 24vw;
     }
     
     
@@ -77,7 +77,7 @@
 @media (max-width:600px)  {
     .productCardMain{
         height: 250px;
-        width: 150px;
+        width: 38vw;
         margin: 3%;
         border-radius: 10px;
         
@@ -85,7 +85,7 @@
     
     .productCardImg{
         height: 160px;
-        width: 150px;
+        width: 38vw;
         border-radius: 10px;
   
     }

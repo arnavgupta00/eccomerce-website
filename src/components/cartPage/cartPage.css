@@ -77,3 +77,38 @@
 
 }
 
+@media (max-width:900px) and (min-width:0px) {
+    .cartPageMain {
+        flex-direction: column;
+    }
+    .cartProductList {
+        width:70vw;
+    }
+    .cartProductListSingle{
+        flex-direction: column;
+    }
+    .cartProductListSingleTextPart{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 15px;
+        width: 300px;
+    
+    }
+    .cartProductListSingle  img{
+        height: 170px;
+        width: 60vw;
+    }
+    .checkoutpart {
+        width: 70vw;
+    }
+    .cartProductListTextAndCross{
+        display: flex;
+        justify-content: space-between;
+        width: 60vw;
+    }
+    .cartProductListSingleCross{
+        margin-top: 100px;
+        
+    }
+}

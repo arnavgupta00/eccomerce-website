@@ -106,6 +106,7 @@ export default function CartPart() {
                         return (
                             <div className='cartProductListSingle'>
                                 <img src={x.image} />
+                                <div className='cartProductListTextAndCross'>
                                 <div className='cartProductListSingleTextPart'>
                                     <h1>{x.productTitle}</h1>
                                     <h3>Quantity: {order.quantity}</h3>
@@ -114,6 +115,8 @@ export default function CartPart() {
                                 <div className='cartProductListSingleCross'>
                                     <RxCross1 onClick={()=>{cartRemove(order.itemId , userInfo.userEmail)}} />
                                 </div>
+                                </div>
+                                
                             </div>
 
                         )

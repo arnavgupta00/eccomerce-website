@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100&family=Oswald:wght@700&family=Poppins:wght@700&family=Roboto&family=Satisfy&family=Tektur:wght@400;800&display=swap');
 
-*{
+* {
     margin: 0%;
 }
-.productMain{
+
+.productMain {
     background-color: rgb(238, 236, 236);
     width: 96vw;
     height: max-content;
@@ -11,18 +12,23 @@
     flex-direction: column;
     margin-top: 50px;
     margin-left: 2.5vw;
+    overflow: hidden;
 }
-.topPart{
+
+.topPart {
     display: flex;
     flex-direction: row;
+
 }
-.productCarousel{
+
+.productCarousel {
     width: 50vw;
     height: 90vh;
     background-color: rgb(222, 220, 220);
     margin: 2.5vw;
 }
-.productSingleTopTitleMain{
+
+.productSingleTopTitleMain {
     width: 40vw;
     height: 90vh;
     margin: 2.5vw;
@@ -31,11 +37,13 @@
     flex-direction: column;
 
 }
-.productSingleTopTitle{
+
+.productSingleTopTitle {
     margin-left: 3vw;
 }
-.productSingleHeading{
-    margin-top:50px;
+
+.productSingleHeading {
+    margin-top: 50px;
     width: 32vw;
     height: max-content;
     background-color: transparent;
@@ -43,17 +51,22 @@
     font-family: 'Oswald', sans-serif;
 
 }
-.productSingleCategory{
+
+.productSingleCategory {
     height: 25px;
     width: max-content;
     padding: 10px;
     background-color: rgb(238, 236, 236);
-    border-radius:15px ;
+    border-radius: 15px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
 
 }
-.productSinglePriceTag{
+.productSinglePriceTagMain{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.productSinglePriceTag {
     display: flex;
     height: 50px;
     width: 30vw;
@@ -61,12 +74,13 @@
     font-size: 25px;
     margin-top: 50px;
 }
-.productSinglePriceTag p{
+
+.productSinglePriceTag p {
     vertical-align: super;
     font-size: 35px;
 }
 
-.productSingleIncreasedPriceTag{
+.productSingleIncreasedPriceTag {
     display: flex;
     height: 50px;
     width: max-content;
@@ -76,12 +90,14 @@
     color: red;
     margin-right: 3px;
 }
-.productSingleIncreasedPriceTag p{
+
+.productSingleIncreasedPriceTag p {
     vertical-align: super;
     font-size: 10px;
 }
-.propductSingleBuyCart{
-    margin-top:50px ;
+
+.propductSingleBuyCart {
+    margin-top: 50px;
     width: 32vw;
     height: 150px;
     display: flex;
@@ -90,28 +106,30 @@
 
 }
 
-.productSingleBuy button{
+.productSingleBuy button {
     margin: 0%;
-    width:  21vw;
+    width: 21vw;
     height: 90px;
     border: 4px solid rgba(0, 0, 0, 0.76);
-    background-color:white ;
+    background-color: white;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 
 
 }
-.productSingleBuy button:active{
+
+.productSingleBuy button:active {
     border: 4px solid white;
-    background-color:black ;
+    background-color: black;
     color: white;
 
 }
-.productSingleCart button{
+
+.productSingleCart button {
     width: 9vw;
     height: 90px;
     border: 4px solid white;
-    background-color:black ;
+    background-color: black;
     color: white;
     margin-left: 0.7vw;
     font-size: 20px;
@@ -120,33 +138,36 @@
 
 }
 
-.productSingleCart button:active{
+.productSingleCart button:active {
     border: 4px solid rgba(0, 0, 0, 0.76);
-    background-color:white ;
+    background-color: white;
     color: black;
 }
-.productSingleBottonCover{
+
+.productSingleBottonCover {
     display: flex;
     flex-direction: row;
     width: 31vw;
     justify-content: space-between;
     margin-top: 50px;
     background-color: rgb(238, 236, 236);
-    border-radius:15px ;
+    border-radius: 15px;
 
 }
-.productSingleDelivery{
+
+.productSingleDelivery {
     height: 40px;
     padding: 10px;
-  
+
     font-family: 'bebas neue';
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
 }
-.productSingleStock{
+
+.productSingleStock {
     height: 40px;
     padding: 10px;
     font-family: 'bebas neue';
@@ -155,66 +176,149 @@
     justify-content: center;
     align-items: center;
     color: green;
-    
+
 }
-.productSingleStockOut{
+
+.productSingleStockOut {
     color: red;
 }
 
-.productSingleDescription{
+.productSingleDescription {
     height: 90vh;
     width: 91.7vw;
     margin: 2.5vw;
-    
+
 }
 
-.productSingleDescriptionHeading{
+.productSingleDescriptionHeading {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 25px;
 }
 
-.productSingleDescriptionDetail{
+.productSingleDescriptionDetail {
     display: flex;
     flex-direction: row-reverse;
 }
-.productSingleDescriptionDetailGrid{
+
+.productSingleDescriptionDetailGrid {
     margin-left: 3vw;
     margin-top: 30px;
 }
-.productSingleDescriptionDetailGridOneCat{
+
+.productSingleDescriptionDetailGridOneCat {
     display: flex;
     flex-direction: row;
-   
+
 }
-.productSingleDescriptionDetailGridOneCatLeft{
+
+.productSingleDescriptionDetailGridOneCatLeft {
     height: 50px;
     width: 25vw;
     border: 2px solid black;
     text-align: left;
-    
+
     font-family: 'Oswald', sans-serif;
 
 }
-.productSingleDescriptionDetailGridOneCatLeft h2{
+
+.productSingleDescriptionDetailGridOneCatLeft h2 {
     margin-left: 2vw;
     padding-top: 10px;
 }
-.productSingleDescriptionDetailGridOneCatRight{
+
+.productSingleDescriptionDetailGridOneCatRight {
     height: 50px;
     width: 15vw;
     border: 2px solid black;
     text-align: left;
     font-family: 'Oswald', sans-serif;
-    
+
 
 }
-.productSingleDescriptionDetailGridOneCatRight h2{
+
+.productSingleDescriptionDetailGridOneCatRight h2 {
     margin-left: 2vw;
     padding-top: 10px;
 }
-.productSingleDescriptionDetailWords{
+
+.productSingleDescriptionDetailWords {
     margin-left: 3vw;
     margin-top: 30px;
     margin-right: 2vw;
     font-family: Verdana;
+}
+
+@media (max-width:900px) and (min-width:0px) {
+
+
+
+    .topPart {
+        flex-direction: column;
+    }
+
+    .productCarousel {
+        width: 90vw;
+        height: max-content;
+    }
+
+    .productSingleTopTitleMain {
+        width: 90vw;
+        height: 500px;
+    }
+
+    .productSingleHeading {
+        margin-top: 30px;
+        width: 90vw;
+        margin-bottom: 20px;
+    }
+    .productSingleCategory {
+        margin-top: 30px;
+        margin-left: 2vw;
+    }
+    .productSinglePriceTag {
+        display: flex;
+        height: 20px;
+        width: max-content;
+        font-family: 'Bebas Neue';
+        font-size: 25px;
+        
+    }
+    .productSingleIncreasedPriceTag {
+        height: max-content;
+        
+    }
+    .productSinglePriceTagMain{
+        flex-direction: row-reverse;
+        justify-content: start;
+        align-items: flex-start;
+    }
+    .propductSingleBuyCart{
+        width:90vwpx;
+        justify-content: start;
+        align-items: flex-start;
+    }
+    .productSingleBuy button{
+        width: 55vw;
+    }
+    .productSingleCart button{
+        width: 25vw;
+    }
+    .productSingleBottonCover{
+        margin-top: 10px ;
+        width: 80vw;
+    }
+    .productSingleDescription{
+        margin-top: 40px;
+        height: 1200px;
+    }
+    .productSingleDescriptionDetail{
+        flex-direction: column-reverse;
+    }
+    .productSingleDescriptionDetailGridOneCatLeft{
+        height: 50px;
+        width: 50vw;
+    }
+    .productSingleDescriptionDetailGridOneCatRight{
+        width: 25vw;
+    }   
 }
