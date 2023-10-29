@@ -23,6 +23,11 @@ function Navbar(props) {
     var searchTextHandle = (e) => {
         setSearchText(e.target.value);
     }
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            navigate("/ResultPage/results/" + searchText);
+        }
+    }
     
     useEffect(() => {
 
@@ -47,7 +52,7 @@ function Navbar(props) {
                 </div>
                 <div className='form'>
                     <input className='search' type='text' placeholder={"Search"} onChange={searchTextHandle}></input>
-                    <input className='submit' type='submit' onClick={() => navigate("/ResultPage/results/" + searchText)} value="GO"></input>
+                    <input className='submit' type='submit' onKeyDownCapture={this.handleKeyPress} onClick={() => navigate("/ResultPage/results/" + searchText)} value="GO"></input>
                 </div>
                 <div className='profile'>
                     <Dropdown authenticationCall={authenticationCall} setauthenticationCall={setauthenticationCall}  />
