@@ -14,6 +14,8 @@ import SearchProducts from './components/search/searchProducts.jsx';
 import SignInUpPage from './pages/loginSignUp/loginSignup.jsx';
 import AdminCenter from './components/adminCenter/adminCenter.jsx';
 import CheckoutPage from './components/checkoutPage/checkoutPage.jsx';
+import Footer from './components/footer/footer.jsx';
+
 import "./App.css";
 import CartPart from './components/cartPage/cartPage.jsx';
 
@@ -43,6 +45,7 @@ function App() {
                             <div style={{ marginTop: "5vh" }}>
                                 <FeaturedProducts />
                             </div>
+                            <Footer />
                         </div>
                     } />
                     <Route path="/productPage/:productId" element={
