@@ -14,6 +14,8 @@ export default function CartPart() {
     const [dataCartProducts, setdataCartProducts] = useState([]);
     const [checkOrderboxes, setOrderCheckboxes] = useState(Array(5).fill(false));
     const [countBad ,setcountBad] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     var statusC
 
@@ -71,11 +73,11 @@ export default function CartPart() {
                 const productDataPromises = response.cart.map(async (order) => {
                     return await fetchData(order.itemId);
                 });
-
+                setIsLoading(true);
                 // Wait for all Promises to resolve
                 const productData = await Promise.all(productDataPromises);
 
-
+                setIsLoading(false);
                 setdataCartProducts(productData);
             } else {
                 console.error("Failed to make request:", response.statusText);
@@ -95,10 +97,9 @@ export default function CartPart() {
         
     }, [countBad]);
 
-    var cartList = [1, 2, 4, 5]
-    var cartItemSpecs = [1, 2, 4, 5]
+
     return <div className='cartPageMain'>
-        <div className='cartProductList'>
+        {isLoading ? <div className='cartProductList skeleton'></div> :<div className='cartProductList'>
             {dataCartProducts.map((x, index) => {
                 if (x) {
                     const order = resultCart[index];
@@ -123,10 +124,10 @@ export default function CartPart() {
                     }
                 }
             })}
-        </div>
+        </div>}
 
         <div className='checkoutpart'>
-
+            <button onClick={()=> navigate("/checkout/cart")}>Gooo</button>
         </div>
     </div>
 }

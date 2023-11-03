@@ -12,6 +12,7 @@ export default function CheckoutPage(props) {
     const navigate = useNavigate();
     const [DataSingle, setDataSingle] = useState([]);
     const [cartItemsToCheckOut, setCartItemsToCheckOut] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const itemInfo = async (id) => {
         try {
@@ -35,25 +36,35 @@ export default function CheckoutPage(props) {
         }
     };
 
-    useEffect(() => {
-        if (itemID === "cart") {
-            setCartItemsToCheckOut(userInfo.cart.map(x => x.itemID));
-        } else {
-            setCartItemsToCheckOut([itemID]);
-        }
-    }, [itemID]);
+
 
     useEffect(() => {
-        const fetchCartItems = async () => {
-            if (cartItemsToCheckOut.length > 0) {
-                const itemData = await Promise.all(cartItemsToCheckOut.map(itemInfo));
-                setDataSingle(itemData);
+        async function fetchCartItems() {
+            if (itemID === "cart") {
+                await AuthenticationFunk();
+                const cartUser = await userInfo.cart;
+                console.log(cartUser);
+                var userCartItemIdList = cartUser.map(x => x.itemId);
+                setCartItemsToCheckOut(userCartItemIdList);
+            } else {
+                setCartItemsToCheckOut([itemID]);
             }
-        };
+
+            console.log(userCartItemIdList);
+            if (userCartItemIdList.length > 0) {
+                const itemData = await Promise.all(userCartItemIdList.map(itemInfo));
+                setIsLoading(false);
+                setDataSingle(itemData);
+                console.log(itemData);
+            }
+        }
 
         fetchCartItems(); // Fetch cart items when component mounts or when cartItemsToCheckOut changes
+    }, []);
 
-    }, [cartItemsToCheckOut]);
+
+
+
 
     const [formData, setFormData] = useState({
         userName: '',
@@ -80,45 +91,50 @@ export default function CheckoutPage(props) {
     const paymentAutho = async () => {
 
         //
-        const data = {
-            userName: formData.userName,
-            userEmail: formData.userEmail,
-            userPhone: formData.userPhone,
-            userPincode: formData.userPincode,
-            
-            Address: formData.AddressHouse+ " " + formData.AddressArea + " "+formData.userCity+ " "+formData.userState+ " "+formData.userCountry+ " " + formData.LandMark,
-            LandMark: formData.LandMark,
-            userCity: formData.userCity,
-            userState: formData.userState,
-            userCountry: formData.userCountry,
-         
-            productID: itemID, 
-            dataOrder: cartItemsToCheckOut.join(','), 
-        };
-    
-        const formDatatosend = querystring.stringify(data); 
-        try {
-            const response = await axios.post(url + "/admin/orderAdd", formDatatosend, {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded', 
-                },
-                timeout: 5000,
-            });
-    
-            if (response.status === 200) {
-                navigate("/");
-            } else {
-                console.error("Failed to make request:", response.statusText);
+        console.log(userInfo.cart[0].quantity);
+        for (var i = 0; i < DataSingle.length; i++) {
+
+
+            const data = {
+                userName: formData.userName,
+                userEmail: formData.userEmail,
+                userPhone: formData.userPhone,
+                userPincode: formData.userPincode,
+
+                Address: formData.AddressHouse + " " + formData.AddressArea + " " + formData.userCity + " " + formData.userState + " " + formData.userCountry + " " + formData.LandMark,
+                LandMark: formData.LandMark,
+                userCity: formData.userCity,
+                userState: formData.userState,
+                userCountry: formData.userCountry,
+
+                productID: DataSingle[i]._id,
+                quantity: userInfo.cart[i].quantity,
+            };
+
+            const formDatatosend = querystring.stringify(data);
+            try {
+                const response = await axios.post(url + "/admin/orderAdd", formDatatosend, {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    timeout: 5000,
+                });
+
+                if (response.status === 200) {
+                    navigate("/");
+                } else {
+                    console.error("Failed to make request:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Failed to make request:", error);
             }
-        } catch (error) {
-            console.error("Failed to make request:", error);
         }
     };
-    
-    
+
+
 
     return <div className='checkoutPageMain'>
-        <div className='checkoutProductsList'>
+        {isLoading ? <div className='checkoutProductsList skeleton'></div> : <div className='checkoutProductsList'>
             {DataSingle.map((itemData, index) => (
                 itemData ? (
                     <div className='checkoutProductsListSingleItem' key={index}>
@@ -130,7 +146,7 @@ export default function CheckoutPage(props) {
                     </div>
                 ) : null
             ))}
-        </div>
+        </div>}
         <div className='checkoutForm'>
             <h1>Checkout</h1>
             <div className='checkoutPagerowflex1'>
