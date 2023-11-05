@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 
 
@@ -104,6 +105,7 @@ function App() {
 
                 </Routes>
             </BrowserRouter>
+            <Analytics />
 
 
 
