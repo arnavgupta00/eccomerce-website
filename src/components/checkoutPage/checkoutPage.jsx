@@ -46,20 +46,28 @@ export default function CheckoutPage(props) {
                 console.log(cartUser);
                 var userCartItemIdList = cartUser.map(x => x.itemId);
                 setCartItemsToCheckOut(userCartItemIdList);
+                console.log(userCartItemIdList);
+                if (userCartItemIdList.length > 0) {
+                    const itemData = await Promise.all(userCartItemIdList.map(itemInfo));
+                    setIsLoading(false);
+                    setDataSingle(itemData);
+                    console.log(itemData);
+                }
             } else {
                 setCartItemsToCheckOut([itemID]);
+                if (itemID) {
+                    const itemData = await itemInfo(itemID);
+                    console.log(itemData);
+                    setIsLoading(false);
+                    setDataSingle([itemData]);
+                    console.log(itemData);
+                }
             }
 
-            console.log(userCartItemIdList);
-            if (userCartItemIdList.length > 0) {
-                const itemData = await Promise.all(userCartItemIdList.map(itemInfo));
-                setIsLoading(false);
-                setDataSingle(itemData);
-                console.log(itemData);
-            }
+
         }
 
-        fetchCartItems(); // Fetch cart items when component mounts or when cartItemsToCheckOut changes
+        fetchCartItems();
     }, []);
 
 
